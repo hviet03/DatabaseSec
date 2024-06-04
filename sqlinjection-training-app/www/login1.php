@@ -59,7 +59,7 @@ ini_set('display_errors', 0);
                 $pass = $_REQUEST['password'];
 
                 // Check for the presence of disallowed characters in username or password
-                $disallowed_chars = ['*', '@', '@@', 'UNION', 'OR', 'null'];
+                $disallowed_chars = ['*', '@', '@@', 'UNION', 'OR', 'null', 'SELECT'];
                 foreach ($disallowed_chars as $char) {
                     if (stripos($username, $char) !== false || stripos($pass, $char) !== false) {
                         echo "Invalid characters detected in username or password. Please avoid using SQL syntax.";
